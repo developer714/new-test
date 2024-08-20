@@ -2,7 +2,7 @@ import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
 
 const client = new ApolloClient({
   link: new HttpLink({
-    uri: "http://localhost:4000", // Replace with the actual GraphQL server URL
+    uri: "https://new-test-token-pairs-vny8.vercel.app", // Replace with the actual GraphQL server URL
   }),
   cache: new InMemoryCache(),
 });

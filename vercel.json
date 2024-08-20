@@ -16,11 +16,15 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "graphql-server/index.js"
+      "dest": "/graphql-server/index.js"
+    },
+    {
+      "src": "/status",
+      "dest": "/graphql-server/index.js"
     },
     {
       "src": "/(.*)",
-      "dest": "token-pairs/build/$1"
+      "dest": "/token-pairs/$1"
     }
   ]
 }

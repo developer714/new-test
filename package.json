@@ -5,12 +5,14 @@
     "token-pairs"
   ],
   "scripts": {
-    "start": "npm --prefix token-pairs start",
-    "build": "npm --prefix token-pairs run build",
-    "server": "node graphql-server/index.js",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd graphql-server && npm start",
+    "client": "cd token-pairs && npm start",
+    "install-all": "npm install && cd token-pairs && npm install && cd ../graphql-server && npm install",
     "deploy": "vercel --prod"
   },
   "devDependencies": {
-    "vercel": "^23.0.1"
+    "vercel": "^23.0.1",
+    "concurrently": "^7.0.0"
   }
 }

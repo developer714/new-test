@@ -1,26 +1,26 @@
-   {
-     "version": 2,
-     "builds": [
-       {
-         "src": "graphql-server/src/index.js",
-         "use": "@vercel/node"
-       },
-       {
-         "src": "token-pairs/package.json",
-         "use": "@vercel/static-build",
-         "config": {
-           "distDir": "token-pairs/build"
-         }
-       }
-     ],
-     "routes": [
-       {
-         "src": "/api/(.*)",
-         "dest": "graphql-server/src/index.js"
-       },
-       {
-         "src": "/(.*)",
-         "dest": "token-pairs/build/$1"
-       }
-     ]
-   }
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "graphql-server/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "token-pairs/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "token-pairs/build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "graphql-server/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "token-pairs/build/$1"
+    }
+  ]
+}

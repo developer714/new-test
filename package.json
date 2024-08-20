@@ -1,7 +1,16 @@
-   {
-     "private": true,
-     "workspaces": [
-       "graphql-server",
-       "token-pairs"
-     ]
-   }
+{
+  "private": true,
+  "workspaces": [
+    "graphql-server",
+    "token-pairs"
+  ],
+  "scripts": {
+    "start": "npm --prefix token-pairs start",
+    "build": "npm --prefix token-pairs run build",
+    "server": "node graphql-server/index.js",
+    "deploy": "vercel --prod"
+  },
+  "devDependencies": {
+    "vercel": "^23.0.1"
+  }
+}
